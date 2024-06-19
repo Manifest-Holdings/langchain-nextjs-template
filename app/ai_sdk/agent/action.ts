@@ -22,6 +22,7 @@ export async function runAgent(input: string) {
     const llm = new ChatOpenAI({
       model: "gpt-4o-2024-05-13",
       temperature: 0,
+      streaming: true,
     });
 
     const agent = createToolCallingAgent({
