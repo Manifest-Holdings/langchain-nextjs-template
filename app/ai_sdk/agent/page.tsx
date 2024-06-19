@@ -5,6 +5,9 @@ import { readStreamableValue } from "ai/rsc";
 import { runAgent } from "./action";
 import { StreamEvent } from "@langchain/core/tracers/log_stream";
 
+export const dynamic = "force-dynamic";
+export const maxDuration = 30;
+
 export default function Page() {
   const [input, setInput] = useState("");
   const [data, setData] = useState<StreamEvent[]>([]);
