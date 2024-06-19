@@ -4,11 +4,13 @@ import React, { useEffect, useRef, useState } from "react";
 import { readStreamableValue } from "ai/rsc";
 import { runAgent } from "./action";
 import { StreamEvent } from "@langchain/core/tracers/log_stream";
+import { unstable_noStore as noStore } from 'next/cache';
 
 export const dynamic = "force-dynamic";
 export const maxDuration = 30;
 
 export default function Page() {
+  noStore();
   const [input, setInput] = useState("");
   const [data, setData] = useState<StreamEvent[]>([]);
   const [isLoading, setIsLoading] = useState(false);
